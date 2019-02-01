@@ -49,6 +49,8 @@ dependencies {
     console "org.grails:grails-console"
     profile "org.grails.profiles:web"
     runtime "org.glassfish.web:el-impl:2.1.2-b03"
+    compile 'org.grails.plugins:spring-security-core:3.2.3' //for login purpose
+
     //runtime "com.h2database:h2"
     //compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.13'
     //compile "org.grails.plugins:mysql-connectorj:5.1.22.1"

@@ -4,6 +4,8 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -39,6 +41,13 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+/* to change bgcolor for a single div use  id */
+#my-form:hover{
+
+  background-color: #545b62
+
 }
 
 html {
@@ -205,9 +214,13 @@ figure {
   margin: 0 0 1rem;
 }
 
+
 img {
   vertical-align: middle;
-  border-style: none;
+  border-style:dashed;
+  /* max-width and max-height added */
+  max-width:100%;
+  max-height:100%;
 }
 
 svg {
@@ -250,7 +263,7 @@ button,
 select,
 optgroup,
 textarea {
-  margin: 0;
+  margin: 0 auto;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
@@ -1810,7 +1823,7 @@ pre code {
 
 .form-control {
   display: block;
-  width: 100%;
+  width: 50%;
   height: calc(2.25rem + 2px);
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
@@ -5399,7 +5412,8 @@ button.close {
   content: "";
 }
 
-.modal-content {
+/* model content class redefined at the bottom */
+/* .modal-content {
   position: relative;
   display: -ms-flexbox;
   display: flex;
@@ -5412,7 +5426,7 @@ button.close {
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0.3rem;
   outline: 0;
-}
+} */
 
 .modal-backdrop {
   position: fixed;
@@ -5433,6 +5447,7 @@ button.close {
 }
 
 .modal-header {
+  font-family:fantasy;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: start;
@@ -5443,6 +5458,7 @@ button.close {
   border-bottom: 1px solid #e9ecef;
   border-top-left-radius: 0.3rem;
   border-top-right-radius: 0.3rem;
+
 }
 
 .modal-header .close {
@@ -9026,5 +9042,157 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
+}
+
+.new-bg-modal{
+  display:none;
+  position:fixed;
+  z-index: 1;
+  left:0;
+  top:0;
+  justify-content: center;
+  width:100%;
+  height:100%;
+  overflow:auto;
+  background-color: rgba(0,0,0,0.7)
+}
+.new-modal-content{
+  background-image: url('../images/building1.jpg');
+  background-repeat:repeat;
+  background-position: center;
+  font-family: comic sans ms;
+  font-weight: bolder;
+  background-color: #f4f4f4;
+  margin:3% auto;
+  padding: 20px;
+  width: 50%;
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.6), 0 7px 20px 0 rgba(0,0,0,0.4);
+  text-align: center;
+  position:relative;
+  animation-name: modalOpen;
+  animation-duration: 0.7s;
+
+}
+
+.new-modal-content:hover{
+  background-color: #f9f9f9;
+}
+
+.closebtn{
+  color:#000;
+  float: right;
+  font-size: 30px;
+}
+.closebtn:hover,.closebtn:focus{
+  color:#ccc;
+  text-decoration: none;
+  cursor:pointer;
+}
+
+.bg-modal{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top:0;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  display:flex;
+}
+.modal-content{
+  width: 400px;
+  height:450px;
+  background-color: white;
+  border-radius: 4px;
+  text-align: center;
+  padding-top: 20px;
+  position:relative; /*set the closest parent*/
+  animation-name: modalOpen;
+  animation-duration: 0.7s;
+
+}
+/* input {
+  width:100%
+  display: block;
+  margin: 0 auto; /*to keep the input in center
+}
+*/
+
+.close {
+  position:absolute;
+  top:0;
+  right:14px;
+  font-size: 56px;
+  transform: rotate(45deg);
+  cursor:pointer;
+}
+
+
+.my-textField{
+  justify-content: center;
+  font-family: sans-serif;
+  /* color: #f4f4f4; */
+  width:70%;
+  padding:5px;
+  margin:10px;
+}
+
+@keyframes modalOpen {
+  from {opacity: 0}
+  to {opacity:0.99}
+
+
+}
+
+.element{
+    background-image:url('../images/sunset.jpg');
+    background-repeat:no-repeat;
+    background-position: center;
+
+
+    background-size: cover;
+}
+.portrait {
+    height: 80px;
+    width: 30px;
+}
+
+.landscape {
+    height: 30px;
+    width: 80px;
+}
+
+.square {
+    height: 75px;
+    width: 75px;
+}
+
+#over img {
+  margin-left: auto;
+	margin-right: auto;
+	display: block;
+
+}
+
+.myouterdiv{
+  position: relative;
+  
+  left:0;
+  bottom:0;
+  right:0;
+ height: 300px;
+ background: center center;
+ background-size: cover;
+ background-image: url('../images/flower.jpg')
+
+
+}
+.header-overlay{
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgb(0,0,0);
+  opacity: 0;
 }
 /*# sourceMappingURL=bootstrap.css.map */
